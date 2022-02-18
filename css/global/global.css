@@ -1,0 +1,35 @@
+/*todos os resets Globais que são aplicados dentro do site*/
+
+body {
+  margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+
+  color: #111;
+}
+h1,
+h2,
+h3,
+h4,
+ul,
+p,
+blockquote,
+dd {
+  margin: 0px;
+}
+ul {
+  padding: 0px;
+  list-style: none;
+}
+a {
+  /*que os as não vão ter decoração de texto e que sua cor deve ser herdada do pai*/
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  max-width: 100%; /*define o tamanho total da imagem*/
+  display: block; /*define ela como um bloco para não deixar solta no site*/
+}
+/*automaticamente torda as bordas somente das imagens com .jpg arrendondadas*/
+img[src$=".jpg"] {
+  border-radius: 4px;
+}

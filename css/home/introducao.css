@@ -1,0 +1,67 @@
+/*Todos os elementos da introdução na home*/
+
+.introducao-bg {
+  background: var(--cor-12) url(../../img/dec/bottom-left.svg) no-repeat bottom
+    160px left 20px;
+  color: #fff;
+  /*cria uma sombra interna no background criando a ilusão de imagem da bicicleta vazando*/
+  box-shadow: inset 0 -120px var(--cor-0);
+}
+.introducao {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px 40px;
+}
+.introducao h1 {
+  margin-bottom: 32px;
+}
+.introducao p {
+  margin-bottom: 20px;
+}
+.introducao h1 span {
+  color: var(-cor-p1);
+}
+
+.introducao-conteudo {
+  align-self: end;
+  padding-bottom: 200px;
+}
+.introducao img {
+  height: 100%; /*ocupa 100% da coluna da grid*/
+  object-fit: cover; /*evita que a imagem distorça quando ficar menor*/
+  border-radius: 4px;
+  width: 100%;
+}
+/*bloco de responsividade*/
+@media (max-width: 1200px) {
+  .introducao h1 {
+    font-size: 48px;
+  }
+  .introducao p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 800px) {
+  .introducao-bg {
+    background: var(--cor-11);
+    padding-top: 40px;
+    box-shadow: inset 0 -60px #fff;
+  }
+  .introducao {
+    /*torna de duas colunas a grid para apenas uma*/
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .introducao-conteudo {
+    /*corrige o espaçamento da imagem para o texto*/
+    padding-bottom: 0px;
+  }
+  .introducao h1 {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  .introducao img {
+    height: 300px;
+    width: 100%;
+  }
+}

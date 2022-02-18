@@ -1,0 +1,85 @@
+/*Todo o conteúdo do Header do site*/
+
+.header-bg {
+  background-color: var(--cor-12);
+  padding: 40px;
+}
+.header {
+  /*usado para dividir em blocos cada elemento*/
+  display: flex;
+  /*usado para quebrar o menu para baixo quando ficar pequeno*/
+  flex-wrap: wrap;
+  gap: 20px;
+  /*usado também para adicionar espaço entre os elementos do header*/
+  justify-content: space-between;
+  align-items: center;
+  padding: 20;
+  /*container responsivo com tamanho máximo*/
+  max-width: 1200px;
+  /*sempre que crescer mais a tela do que 1200 centraliza*/
+  margin-left: auto;
+  /*sempre que crescer mais a tela do que 1200 centraliza*/
+  margin-right: auto;
+}
+.header-menu {
+  /*separações de menu do header principal*/
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.header-menu a {
+  /*botão dos links no header*/
+  color: var(--cor-0);
+  padding-top: 16px 0px;
+  display: inline-block;
+  font-size: 18px;
+  /*define que sua posição é relativa ao body, evitando o bug onde o sublinhado toma todo como tamanho todo o body, e não o a*/
+  position: relative;
+}
+.header-menu a::after {
+  /*cria um sublinhado depois de cada A com tamanho definido de 0%*/
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0%;
+  background: var(--cor-0);
+  margin-top: 4px;
+  position: absolute; /*define que a posição do sublinhado deve ter uma posição relativa ao seu pai A assim não ocupando 2 espaços e não aumentando o elemento que ele foi atribuido*/
+}
+.header-menu a:hover:after {
+  /*seleciona esse elemento criado acima e adiciona um hover com temporizador (transition) e posição 100% do espaço que vai ser criada a animação de sublinhar*/
+  width: 100%;
+  transition: 0.3s;
+}
+
+@media (max-width: 800px) {
+  /*usado para definir tamanho das configurações após 800px de largura*/
+  .header-menu {
+    /*diminui a largura do espaçamento dos botões de menu*/
+    gap: 16px;
+  }
+  .header-menu a {
+    /*adiciona um background mais claro, diminui a largura e aumenta o tamanho do botão de menu*/
+    background: var(--cor-0);
+    padding: 12px 16px;
+    border-radius: 4px;
+  }
+  .header-menu a:hover {
+    /*cria o efeito de mudar de cor o background abaixo de 800px quando o mouse passar por cima*/
+    background: var(--cor-10);
+  }
+  .header a:after {
+    /*remove o efeito de sublinhado do menu mobile*/
+    display: none;
+  }
+}
+@media (max-width: 800px) {
+  /*usado para definir tamanho das configurações após 600px de largura*/
+  .header-menu {
+    gap: 12px;
+  }
+  .header-menu a {
+    background: var(--cor-11);
+    font-size: 14px;
+  }
+}
